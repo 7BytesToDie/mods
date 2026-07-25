@@ -1,3 +1,9 @@
+# NaturalSelection 1.3.1
+
+- Fixed compatibility with sandbox option for respawn delays
+- Removed vultures from previous night groups where needed (vultures are in their own groups in 3.0)
+- Fixed rabbit and chicken spawn rates in the wasteland
+
 # NaturalSelection 1.3.0
 
 Fine-tuned entity groups using the binomial distribution to:
