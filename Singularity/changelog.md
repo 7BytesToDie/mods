@@ -1,3 +1,7 @@
+# Singularity 4.0.1
+
+- Hotfix for XML encoding
+
 # Singularity 4.0.0
 
 SINGULARITY REFACTOR RELEASE NOTES
