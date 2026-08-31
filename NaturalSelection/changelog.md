@@ -1,3 +1,7 @@
+# NaturalSelection 2.0.1
+
+- Hotfixed XML encoding
+
 # NaturalSelection 2.0.0
 
 I may have a problem.
