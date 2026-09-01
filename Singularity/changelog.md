@@ -1,3 +1,7 @@
+# Singularity 4.1.0
+
+- Material overrides now respect an optional variantName attribute. Omitting it keeps all overrides combined into one fixed look (same visual result as before). Using distinct names creates separate variants, with deterministic pseudo-random selection per entity. Existing mods retain the same visual outcome; this just makes variant creation more intentional. See blocks.xml for details (it is much clearer there than a short changelog entry will ever be). Technically, this is a breaking change, but I released 4.0.0 so recently, that I'm treating it as an improvement when it comes to versioning. Variants in the original implementation were as good as broken in terms of usefulness anyway.
+
 # Singularity 4.0.1
 
 - Hotfix for XML encoding
