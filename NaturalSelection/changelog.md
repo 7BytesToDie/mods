@@ -1,3 +1,9 @@
+# NaturalSelection 2.1.0
+
+- Fixed chicken cannibalism rate (100 percent to 45 percent)
+- Split entityclasses.xml
+- Improved compatibility with Watchguards (removes the glow from those animals too)
+
 # NaturalSelection 2.0.2
 
 - Fixed slide-walking
