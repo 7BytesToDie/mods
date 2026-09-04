@@ -1,3 +1,7 @@
+# Singularity 4.1.2
+
+- Fixed omitted confidence check that was causing predators to run away too easily.
+
 # Singularity 4.1.1
 
 Added guard to prevent NRE related to Twitch Integration
