@@ -1,3 +1,11 @@
+# Singularity 4.1.3
+
+- Improved hysteresis in EAIFollowAlphaSG
+- Removed unwanted home-return from EAIApproachAndAttackTargetSG while keeping chase timeout.
+- Fixed erratic behavior caused by EAIRunawayWhenHurtSG
+- Ensured retreat can interrupt eating (priority-driven)
+- Fixed edge-case NRE during entity initialisation.
+
 # Singularity 4.1.2
 
 - Fixed omitted confidence check that was causing predators to run away too easily.
