@@ -1,3 +1,9 @@
+# NaturalSelection 2.1.1
+
+- Reordered priorities
+- Fixed animals not fleeing from swarms of insects
+- Removed vanilla Territorial from bears
+
 # NaturalSelection 2.1.0
 
 - Fixed chicken cannibalism rate (100 percent to 45 percent)
