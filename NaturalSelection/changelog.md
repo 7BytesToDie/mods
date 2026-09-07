@@ -1,3 +1,7 @@
+# NaturalSelection 2.1.2
+
+- Fixed vulture behavior
+
 # NaturalSelection 2.1.1
 
 - Reordered priorities
