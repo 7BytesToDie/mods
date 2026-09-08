@@ -1,3 +1,7 @@
+# NaturalSelection 2.1.3
+
+- Improved compatibility with other mods
+
 # NaturalSelection 2.1.2
 
 - Fixed vulture behavior
