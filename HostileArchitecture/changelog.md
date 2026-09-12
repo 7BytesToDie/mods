@@ -2,4 +2,3 @@
 
 - Updated icon, localizations and ModInfo
 - Minor refactoring
-
