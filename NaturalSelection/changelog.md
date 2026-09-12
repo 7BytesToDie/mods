@@ -84,3 +84,49 @@ More significant changes in upcoming releases. Stay tuned.
 # NaturalSelection 1.2.0
 
 - Slightly tweaked spawn rates
+
+# NaturalSelection 1.1.3
+
+- Switched to SemVer.
+- Removed `safeDistance` parameter from all animals so they use the default value (they keep a bit more distance now).
+- Fixed: Grace no longer groups up with boars sometimes, and attacks them on sight instead.
+
+# NaturalSelection 1.1.2.0
+
+- Further adjusted detection ranges and chasing times of boars and snakes to make them more defensive/opportunistic
+- Removed Stags and Does from the list of potential targets boars can try to hunt
+
+# NaturalSelection 1.1.1.0
+
+- Adjusted detection ranges and chaseTimeMax for all animals.
+
+# NaturalSelection 1.1.0.0
+
+IMPORTANT: **remove zzzzzzzIncreasedAnimalSpawning.** If you still want higher spawn rates, you can keep it, but you should update it to the most recent version. It is now an optional addon, so you must do this manually.
+
+- Natural Selection is no longer merely an AI overhaul: it also tweaks animal entitygroups of each biome for balance and to increase animal diversity.
+- Thanks to the new feature added to Singularity in 1.3.0.0, NS now applies reasonable limits to animal groups so they can't grow forever. The new system also makes it more likely for groups of different sizes to exist simultaneously.
+- Tweaked animal spawn rates and chances of animals being gregarious to accomplish multiple things:
+- animals that are typically solitary (like boars), can't so easily be found in groups now.
+- the pine forest biome is a lot less challenging, better balanced.
+- animals that can't easily be found in large groups in the pine forest may form larger groups in other biomes. For example: in the pine forest, wolves are mostly alone, or sometimes in packs of 2 or 3, but their packs can grow much more rapidly in the snow biome, so they can eventually get to a size of 7 or 8.
+- if you clear an area of predators, it now stays cleared for at least a day, so you don't have to worry about predators showing up all the time (unless they happen to pass by as they move around the map).
+
+# NaturalSelection 1.0.1.2
+
+- Lowered the previously obscene spawn maximums to the point animals can still form groups over time, but without overpopulating areas very quickly, which was also causing unexpected behavior (bunny stacks?!!!). Hosts are encouraged to further tweak these values to their liking. (Thanks Yumi)
+- Reminder: update Singularity to see gregarious animals form groups. Before 1.2.0.0 they didn't have that behavior.
+
+# NaturalSelection 1.0.1.1
+
+- Added additional spawning.xml definitions for when players use other mods that vastly increase zombie spawn rates/maximums, to balance out the population of animals.
+- Split spawning.xml off the main folder, into a folder that loads last, and removed the conditional that was meant to ensure animal spawning changes from other mods took priority. If someone does NOT want the increased animal spawn rates/maximums from this mod for whatever reason, they can easily edit those files or delete that folder.
+- Hotfix (I just woke up, bear with me)
+
+# NaturalSelection 1.0.0.1
+
+- Hotfix: removed one line I added for testing purposes.
+
+# NaturalSelection 1.0.0.0
+
+- Initial release

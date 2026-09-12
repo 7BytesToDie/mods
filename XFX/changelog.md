@@ -41,5 +41,34 @@ with XFX regardless of load order.
 
 # XFX 2.0.0
 
-XFX 2.0.0
 - 3.0 Compatibility
+
+# XFX 1.1.3
+
+- Switched to SemVer
+- Improved XPath expressions to prevent all zombie projectiles from applying explosion effects and improve compatibility with other mods
+
+# XFX 1.1.2.0
+
+- Lowered the base duration of deafness from 5 minutes to 1
+- Added a long version of deafness (10 minutes) that occurs when a player is deafened again while a deafness effect is already in place
+- Fixed a minor issue with stun stacking
+- Updated syntax of requirement groups
+- Fixed after-stun slow effect making zeds skate for a few seconds
+
+# XFX 1.1.1.0
+
+- Added 2.5b18 compatibility
+
+# XFX 1.1.0.1
+
+- Hotfix: Deafness not getting removed correctly (oops)
+
+# XFX 1.1.0.0
+
+- Halved the duration of Deafness
+- Slightly increased the duration of Flash Bang VFX
+- Slightly increased the duration of non-player entity stun
+- Slightly lowered speed penalty from Flash Bang stun for both players and non-players (actual stun unaffected)
+- Made ringing ears sound loop and fadeout when the buff ends
+- Fixed ringing ears sound stacking

@@ -231,3 +231,82 @@ I am not going to write a full migration guide here. Read the updated blocks.xml
 
 - 3.0 Compatibility
 - Added: Override Trader Schedule switch
+
+# Singularity 2.0.0
+
+Advanced Sky Manager changes:
+- New feature: The visual start and end times of Blood Moons are now configurable (see blocks.xml).
+- Improved: Reworked trader opening/closing times. They can now be configured using a digital clock format like in vanilla, and they are auto-adjusted as needed when Realistic Noons is enabled (see blocks.xml). They are also more robust and fail gracefully if badly configured.
+- Improved: Fixed typo in blocks.xml and reworded a little bit.
+- Fixed: NullReferenceException when joining dedicated servers.
+- Fixed: Time of trader close warning not updated correctly.
+
+# Singularity 1.6.0
+
+- New feature: some math functions in XML. See blocks.xml for details, and remember: with great power comes great responsibility.
+- 2.6 stable compatibility.
+- Fixed mismatching end of blood moons when using the Advanced Sky Manager.
+
+# Singularity 1.5.0
+
+- Switched to SemVer
+- Added an AdvancedSkyManager section. Read blocks.xml for details.
+
+# Singularity 1.4.0.2
+
+- Renamed folder to avoid locale issues with applications like Wabbajack
+
+# Singularity 1.4.0.1
+
+- Hotfix: Set AllowSpawnNearBackpack to default before closing to avoid issues
+
+# Singularity 1.4.0.0
+
+- Added NoRespawnNearBackpack server policy
+
+# Singularity 1.3.0.1
+
+- Gregariousness: Fixed group counter-attacking behavior not triggering when playing offline.
+- Improved examples in blocks.xml
+- Very minor refactoring
+
+# Singularity 1.3.0.0
+
+- Groups of gregarious entities can now be capped in size using a Singularity_GroupSize property (read blocks.xml for details).
+- Updated documentation about Singularity_Gregariousness.
+
+# Singularity 1.2.0.0
+
+- Added a ServerPolicies section in blocks.xml and implemented the first (and likely only one ever), which allows servers to dictate the Brightness (OptionsGfxBrightness) of clients when they join.
+- Reworked gregariousness. Gregarious entities now travel from further away to join other gregarious entities of their type.
+- Fixed inline documentation in blocks.xml regarding cannibalism.
+- Officially dropped backward compatibility (got enough on my plate, sorry).
+- Other minor improvements and optimizations.
+- Tidied things up in the source enough to be worth a mention, but unless you are a GitHub rat you won't care about this one.
+
+# Singularity 1.1.0.1
+
+- Made NetPackageItemActionSound.GetLength() dynamic to prevent disconnections in multiplayer and for optimization
+- ItemActionRanged_Patches.UpdateSounds sends NetPackages only when needed
+- Fixed errors when dedicated servers load
+
+# Singularity 1.1.0.0
+
+- Adds five new entity-AI-related features that give entities more advanced decision-making (see blocks.xml for more info). For reference: New entity class types, EntityGregariousness, SetAsTargetIfHurt_BypassSameTypeCheck, RunawayFromEntity_NoImplicitPlayer, SetNearestCorpseAsTarget_Filters.
+
+# Singularity 1.0.1.3
+
+Fixes regression (1.0.1.2): custom ammo sounds always applied, even with normal ammo.
+Performance improvements.
+
+# Singularity 1.0.1.2
+
+- Fixed custom ammo sounds feature breaking silencers
+
+# Singularity 1.0.1.1
+
+- Fixes click in ear ringing sound loop
+
+# Singularity 1.0.1.0
+
+Ringing ears sound loop
