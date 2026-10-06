@@ -1,3 +1,8 @@
+# _Singularity 5.0.0
+
+- New feature: Added a warning when the TFP_Harmony mod is missing, shown on load and on later sessions until the 0_TFP_Harmony folder is restored (see Config/buffs_harmony_warning.xml and Config/Localization.csv).
+- 7DTD 3.3 compatibility: Updated ammo sound handling. The per-slot action data lookup was rewritten for the new inventory API, and the now-unused network length override was dropped, so ammo-specific sound overrides keep working.
+
 # Singularity 4.2.0
 
 - New MinEventActionRollEntitySpeed applies a deterministic per-entity multiplier to aggro, aggro-max, and panic speeds. Walk and night speeds can be varied via optional walkMin/walkMax attributes (default 1.0, no change) since walk-cycle animations foot-slide under variation.
