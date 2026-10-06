@@ -1,3 +1,9 @@
+# ByteblazarsRWGTweaks 3.0.0
+
+- Gears API v3 compatibility: Updated the mod to target Gears API v3. Settings bindings now use the attribute-based API, replacing the manual tab and category lookups and the per-setting change handlers with [Setting], [SettingOnValueChanged], and [SettingOnSelectedChanged] attributes. ModSettings.xml was updated to the V2 schema. Gears is now mandatory, and GearsAPI.dll is no longer bundled, so it must be installed separately.
+- Fixed: The trader rekt alt was spelled "trader_rekt" instead of "trader_rektx", so ReplaceTraderDupesWithVariants never replaced a Rekt dupe.
+- Improved: Cleaned up the localization files. Removed leftover empty color tags from ten UI labels, trimmed trailing whitespace, and corrected wording in several translations.
+
 # ByteblazarsRWGTweaks 2.1.0
 
 - 3.0 compatibility
