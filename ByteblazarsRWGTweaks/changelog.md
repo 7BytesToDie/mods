@@ -1,3 +1,46 @@
+# ByteblazarsRWGTweaks 4.0.0
+
+Migration from 3.0.0:
+- Every setting has moved to a new tab and category path.
+- The Main tab is renamed to POIs and the Experimental tab to Advanced. The Traders tab keeps its name but its single Traders category is split into Spawn limits, Duplicates and Spacing.
+- The one-line generic tooltip that every tab and section used is gone; each tab and section now has its own description.
+- Prevent empty lots is replaced by Settlement duplicates (Strict / Only as needed / Always). Set it to Always to keep the previous on behavior. Only as needed, the new middle option, allows duplicates only when the town is running low on unique buildings; the Tight supply threshold slider controls when that kicks in.
+- Max traders per biome is replaced by five per-biome selectors: Forest, Burnt forest, Desert, Snow and Wasteland trader limit. To keep the previous value, set all five to the same number.
+- Use destroyed variants and Max variants are merged into one Duplicate trader variants selector (Disabled, 1-5, Unlimited). Pick the cap you want, or Unlimited for no cap.
+- Allow up to this tier is a selector (Off, Tier0 through Tier4) instead of a numeric slider. The range is the same.
+
+POIs tab:
+- New feature: Town POIs now has five per-biome selectors (Forest, Burnt Forest, Desert, Snow, Wasteland) that cap how many non-trader buildings each town block can have in that biome. Each selector is [Unlimited, 1, 2, 3, 4, 5]. Unlimited matches vanilla. Traders do not count and always appear.
+- New feature: Wilderness POI count now has five per-biome multiplier sliders (range 10-400) over the count rwgmixer.xml sets. 100 leaves rwgmixer.xml unchanged.
+- New feature: Vanilla rules for mod prefabs. Exempts prefabs added by other mods from Prevent duplicate POIs. Useful when a mod adds a small number of prefabs that would otherwise be left under-placed.
+- Improved: Alternative Priorities runs a second wilderness pass, so tier-matched prefabs that could not find a slot in their home biome still get a chance on leftover tiles.
+- Fixed: With Prevent duplicate POIs off, vanilla's wilderness retry path runs normally. Before, the mod disabled that path unconditionally, so RWG ran slightly differently from vanilla even with every setting off.
+
+Traders tab:
+- New feature: Trader source selector (All, Vanilla only, Mods only, None). None disables every trader, including mod-added ones.
+- New feature: Trader spawn location selector (Both, Towns only, Wilderness only).
+- New feature: five per-biome trader limit selectors (Forest, Burnt forest, Desert, Snow, Wasteland trader limit) limit how many traders may spawn in each biome. Each selector is [Unlimited, None, 1, 2, 3, 4, 5]. None blocks new traders in that biome.
+- New feature: Trader theme repeat distance slider. Overrides every trader prefab's own spacing value. Applies to the next generation when changed mid-session.
+- New feature: Minimum trader spacing slider. Enforces a minimum distance between any two traders regardless of type.
+- New feature: Config/trader-duplicate-whitelist.txt. Trader prefabs listed there always bypass Unique trader POIs and the per-biome limits.
+- Fixed: Variant traders now count toward Minimum trader spacing, so a base trader and its destroyed variant no longer land next to each other.
+
+World tab:
+- New feature: Allow 0% biome weight. Lifts the 5% floor on the world generation screen so a biome can be excluded entirely.
+- New feature: Keep desert and snow apart. Reorders biome placement so at least one other biome sits between desert and snow. Applies to Line and Circle layouts; Circle 2 is treated as Circle for that generation because a doubled ring cannot always separate the two. Best-effort; if the buffer biome runs out of tiles first, the desert-snow adjacency count reports the shortfall in the log and in rwg_diagnostics.txt.
+- New feature: POIs from removed biomes (Off, Anywhere, Wilderness only). Lets prefabs whose biome tags reference only turned-off biomes still appear elsewhere.
+- New feature: Highway connection attempts slider. Controls how many nearby townships the highway planner tries to connect each town to. Applies to the next generation when changed mid-session.
+- New feature: Radiation zone width slider. Widens the radiation ring around the world edge.
+- New feature: six player spawn controls. Spawn point count (up to 32; vanilla places exactly 12 and lower values reject candidates, higher values add spawns after the first 12 using the filters on the same tab), Trader proximity (blocks), Biome restriction (Vanilla, Any, or a specific biome), Max spawn prefab difficulty (Tier0 through Tier5, Any; Tier 1 matches vanilla), Min distance between spawns, and Allow spawns in towns.
+- Fixed: A zeroed forest biome weight now actually produces a forest-free world. Vanilla always filled leftover tiles with forest, so the weight change had no effect on its own.
+- Fixed: A zeroed center biome no longer causes a seed collision in the biome generation pass; the layout is temporarily treated as Circle for that generation only.
+
+Advanced tab:
+- New feature: Allow towns in any biome. Lifts each township's rwgmixer.xml biome restriction, so a township type can appear in any biome that has room for a town.
+- New feature: Log verbosity selector (Normal, Verbose, Detailed). Normal writes the startup config summary, prefab pool counts, spawn summary and second-pass summary; Verbose adds per-trader replacement logs, ZZTong variant checks and a theme saturation summary; Detailed adds a per-leftover-POI diagnostic and writes rwg_diagnostics.txt.
+- New feature: rwg_diagnostics.txt (written at Log verbosity Detailed). Saved into the generated world folder: effective config, spawn points, prefab pool, used prefabs, per-district POI counts, functional traders per biome, and the desert-snow adjacency count. Useful for bug reports.
+- New feature: bbrwgtest console command. Runs RWG scenarios from a JSON file. Not required for normal play.
+
 # ByteblazarsRWGTweaks 3.0.0
 
 - Gears API v3 compatibility: Updated the mod to target Gears API v3. Settings bindings now use the attribute-based API, replacing the manual tab and category lookups and the per-setting change handlers with [Setting], [SettingOnValueChanged], and [SettingOnSelectedChanged] attributes. ModSettings.xml was updated to the V2 schema. Gears is now mandatory, and GearsAPI.dll is no longer bundled, so it must be installed separately.
