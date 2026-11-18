@@ -1,3 +1,27 @@
+# Natural Selection 3.0.0
+
+- New feature: Settings menu. Settings are grouped into "Fight or flight", "Feeding", "Carrion eaters", "Group size", "Spawning" and "Body". Without Gears installed, every setting uses its default.
+- New feature: "Speed mode" with "Vanilla", "Balanced" (default) and "Brutal". Balanced keeps prey at vanilla speeds and tunes predators so every one of them can catch a sprinting player. Brutal lets fast animals run faster than vanilla while their animations play naturally.
+- New feature: "Stalking". Wolves, coyotes, mountain lions, bears and small bears stalk players before committing to a fight, freezing while a player watches them. Stalk detection ranges are 90 m (wolf), 82.5 m (coyote), 105 m (mountain lion), 75 m (bear) and 67.5 m (small bear).
+- New feature: "Corpse investigation". Stags, does, rabbits and chickens approach unfamiliar corpses at reduced speed, pause to look around, and may flee.
+- New feature: "Chase while visible" and "Chase timeout (seconds)". With the first on, predators keep chasing while they can see the target, and the timeout starts only after sight is lost.
+- New feature: "Carrion eaters" toggles for each species, controlling whether it also eats decayed corpses.
+- New feature: "Feeding" settings: "Hunger cycle", "Digestion heals", "Eat corpses" and "Cannibalism chance factor".
+- New feature: "Fight or flight" settings: "Confidence factor", "Rage chance factor", "Startle chance factor", "Heat startle chance factor", "Torch threat factor", "Player threat factor", "Non-combat retreat threshold (%)", "Realistic break block" and "Realistic destroy area".
+- New feature: "Group size" sliders for each species.
+- New feature: "Spawning" settings: "Population mode" ("Natural", "Sparse", "Abundant", "Horde"), per-biome density factors, "Max spawned animals" (default 50) and "Ignore animal spawn times".
+- New feature: "Body" settings: "Size variation (%)" (default 15), "HP scaling" ("Vanilla", "By size" (default), "Both"), "Harvest scaling", "Harvest amount factor" and "Glow fix".
+- New feature: A warning appears when Singularity is not installed. It states that SGAI and material overrides are disabled until Singularity is installed.
+- Improved: Requires Singularity 6.0.0 or later. The XML now uses `<sgop>`, which earlier Singularity versions do not read.
+- Improved: Per-individual speed variation is removed. Speed is set by entity class only.
+- Improved: The fixed size roll of 0.85 to 1.15 per class is replaced by the "Size variation (%)" setting, which defaults to the same range.
+- Improved: Flee distances are set per class (for example, wolves 20 to 60), and startle duration is 30 seconds.
+- Improved: Nocturnal wolves and night-spawning dire wolves in the snow now spawn in their own single-species groups, instead of the night groups they previously shared with stags, does and zombie dogs.
+- Improved: Zombie bears, dire wolves, zombie dogs, zombie boars and Boss Grace use vanilla break-block and destroy-area behavior. They are always hungry, so they keep looking for corpses.
+- Improved (modders): The property `SG_AIConfidenceScale` is renamed `SG_AIConfidenceFactor`. The property `SG_AIChaseTimerMode` is replaced by `SG_AIChaseWhileVisible`.
+- Fixed: Mountain lions no longer roll their speed twice on first spawn, which compounded their panic speed.
+
+
 # NaturalSelection 2.2.0
 
 Add per-entity speed variation and expand wasteland night spawns
