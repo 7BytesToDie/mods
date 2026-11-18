@@ -1,3 +1,33 @@
+# Singularity 6.0.0
+
+- New feature: Stalking. Entity classes with `SG_AIStalkChance` above 0 roll to stalk players. A stalking entity approaches cautiously beyond `SG_AIStalkMinDistance` (default 15), freezes while an aware player is looking at it, and runs a countdown. When the countdown expires, `EAIStalkPlayerSG` either commits to the approach or backs off, depending on confidence.
+- New feature: Speed animation sync. Entity classes that set `SG_SpeedAnimSync` to true move at their MoveSpeed values in blocks per second by adjusting how fast their animations play. Other classes keep vanilla playback.
+- New feature: Corpse investigation (`EAIInvestigateCorpseSG`). Entities approach nearby corpses, may be startled into fleeing, and investigate each corpse at most once per 120 seconds.
+- New feature: `RollEntityScale` gains `variance` (overrides min and max), `healthMode` (Vanilla, BySize or Both) and `scaleHarvest` (0-100).
+- New feature: `EAISetTargetSG` gains `excludeFlags`, which skips living candidates carrying any listed entity flag, and `corpseRadius`.
+- New feature: `SG_AIChaseWhileVisible` keeps a chase going while the target stays visible. `SG_AIPlayerLevelThreatMultiplier` scales the player level's contribution to threat.
+- New feature: `<sgop>` standalone patch element, with the operations `scalePercent`, `floor`, `ceil`, `appendText` and `prependText`, and `segment` and `group` for regex-targeted changes.
+- New feature: Console commands `sgroll`, `sgstalk` and `sgmove` for inspecting roll state, stalking and movement.
+- New feature: Added a loading screen tip.
+- Improved: The `singularity_op` attribute on `<set>` and `<setattribute>` is removed. Use `<sgop>` instead. The element's placeholder value is now applied.
+- Improved: `SG_AIConfidenceScale` is renamed `SG_AIConfidenceFactor`. The old name is no longer read.
+- Improved: `fleeCorpses` is removed from `EAIRunawayFromEntitySG`. Include the `Corpse` token in `flags` instead.
+- Improved: Corpse eating in `EAISetTargetSG` is now opt-in. Previously a hungry entity with no corpse settings ate any corpse except its own class. Corpse scanning now requires `corpseClass`, `corpseFlags`, `corpseRadius` or `cannibalismChance`. With `cannibalismChance` alone, an entity eats only its own class, and only when the roll succeeds.
+- Improved: Malformed numeric config values now raise an error naming the property, instead of silently falling back to a default.
+- Improved: `EAIRunawayWhenHurtSG` fires on damage taken while no other combat task is running, such as a hit from an unseen source while wandering. The default `healthPer` stays at 1.0.
+- Improved: `EAIRunawayFromEntitySG` no longer startles on repeated noise from the same source. A louder source still does.
+- Improved: Rage from wounds while fleeing now triggers below 50% health (it was 20%). Rage also triggers when cornered mid-flee, and when startled while confident enough to fight the source.
+- Fixed: `EAIRunawayWhenHurtSG` no longer retreats to a remembered spot while its attacker is still visible.
+- Fixed: Death bookkeeping for groups no longer runs twice when SGAI is enabled, and no longer runs when it is disabled. It now also runs on the first real transition to dead, so pack cleanup after an alpha dies works.
+- Fixed: Re-enraging an already enraged entity no longer replays the distressed alert sound.
+- Fixed: `EAIApproachAndAttackTargetSG` no longer requests the give-up sound when it clears a target. Entity classes could get stuck trying to play that sound, which interfered with their normal behavior and caused visual glitches. Those classes no longer play it.
+- Fixed: Ranged item ammo sounds keep their `Sound_start` and `Sound_loop` values when the ammo doesn't set them. Ammo sound overrides are sent to the shooting player, not the host.
+- Fixed: Material overrides are no longer applied when the MaterialOverrides toggle is off. They also apply to every submesh of a renderer, not just the first.
+- Fixed: `EAIFeedSG` has a minimum eat reach of 1 m, so small entity classes can start eating larger corpses.
+- Fixed: The TFP_Harmony missing-mod warning now displays its message. The localization file was previously rejected on load with a warning, so the message never appeared.
+- Fixed: Sky schedule dusk is always kept after dawn, including with the RealisticNoon shifts, and noon is calculated correctly when the day wraps past midnight.
+
+
 # _Singularity 5.0.0
 
 - New feature: Added a warning when the TFP_Harmony mod is missing, shown on load and on later sessions until the 0_TFP_Harmony folder is restored (see Config/buffs_harmony_warning.xml and Config/Localization.csv).
