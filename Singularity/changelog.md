@@ -1,3 +1,17 @@
+# Singularity 7.0.0
+
+- New feature: SG_IsFacing requirement, which passes when an entity is looking toward the other entity of the event (attributes target and cone, see blocks.xml).
+- New feature: Stock deafness effect SG_buffDeafness that any mod can apply, with its own icon and text in 13 languages (see blocks.xml).
+- New feature: SetCVarFromGearsSetting action, which stores a player's own Gears Global setting in a local cvar that XML can check (see blocks.xml).
+- New feature: DisableCustomDrowningEffectsCVar and DisableCustomBurningEffectsCVar properties, which switch the custom drowning and burning screen effects off for a single player (see blocks.xml).
+- New feature: FlashColor enum in Singularity.Core, for Gears selectors.
+- Improved: Renamed the SG_XFXIsNonlethalExplosive property to SG_NonlethalExplosive. The old name is no longer read.
+- Improved: Renamed the stock sounds bbxfx_ringingEars, bbxfx_loudBang and bbxfx_fastHeartbeat to SG_RingingEars, SG_LoudBang and SG_FastHeartbeat. The old names no longer exist.
+- Improved: The non-lethal explosive examples in blocks.xml now use the Explosion properties the game actually reads (Buff, RadiusEntities), and the documentation now says that blocks between the blast and an entity shield it.
+- Improved: Release builds now include debug symbols, so Singularity errors in the log show line numbers.
+- Fixed: The color attribute of SG_VFXOverlay screen effects was ignored, so every overlay showed as white.
+
+
 # Singularity 6.0.0
 
 - New feature: Stalking. Entity classes with `SG_AIStalkChance` above 0 roll to stalk players. A stalking entity approaches cautiously beyond `SG_AIStalkMinDistance` (default 15), freezes while an aware player is looking at it, and runs a countdown. When the countdown expires, `EAIStalkPlayerSG` either commits to the approach or backs off, depending on confidence.
