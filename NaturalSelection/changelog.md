@@ -1,3 +1,13 @@
+# Natural Selection 3.1.0
+
+- New feature: The per-player Mods settings now have a "Where are the settings?" tab that explains Natural Selection only has world settings and where to find them.
+- Improved: The missing Singularity chat warning now also appears when Singularity is older than 6.0.0, and it names the required version.
+- Improved: Removed the settings note from the mod description, since the new tab explains it.
+- Improved: Loading screen tips are now translated into every supported language.
+- Improved: Standardized category and selector colors... somewhat.
+- Fixed: Loading screen tip titles.
+
+
 # Natural Selection 3.0.0
 
 - New feature: Settings menu. Settings are grouped into "Fight or flight", "Feeding", "Carrion eaters", "Group size", "Spawning" and "Body". Without Gears installed, every setting uses its default.
