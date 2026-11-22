@@ -1,3 +1,26 @@
+# XFX 4.0.0
+
+- New feature: XFX now requires Singularity 7.0.0 or later and posts a red chat warning on every load when it is missing or outdated.
+- New feature: World settings (optional, need Gears, in the Mods tab when you load a save or start a new game): explosion injuries on or off, a separate chance for each explosion injury (stun, broken arm, broken leg, concussion, deafness), deafness duration, Flash Thunder self-deafness chance, enemy stun duration, melee knockdown of stunned enemies, concussion and deafness chance for players hit by stun weapons, and blood splatter from storm damage.
+- New feature: Personal settings that each player picks for themselves (optional, need Gears, in the Mods menu, applied on the next world load): white or black stun flash, stun camera shake, drowning screen effect, burning screen effect, and the heartbeat while drowning or burning.
+- New feature: Six loading screen tips.
+- Improved: Deafness now uses Singularity's deafness effect. Its duration, icon and description are unchanged.
+- Improved: The mod is now listed as XFX, with a new description and a link to its mod page.
+- Improved: Reworded the ear muffs and Flash Thunder ammo descriptions, and every French text now addresses the player the same way.
+- Improved: The loading screen tip is now translated into every supported language.
+- Fixed: An explosion could only give one injury. Each injury now rolls separately at its own chance.
+- Fixed: A stun grenade could not give a concussion and deafness at the same time.
+- Fixed: Flash Thunder hits chose the full or partial flash from the victim's last stun grenade instead of where they were looking. The full flash now only applies when the victim faces the shooter.
+- Fixed: After a stun grenade hit, critical hit effects could stop applying for good.
+- Fixed: Players hit by a stun grenade or Flash Thunder were slowed far more than intended. They now move 90% slower and attack 50% slower.
+- Fixed: Zombies and animals recovering from a stun were slowed far more than intended. They now move and attack at half speed.
+- Fixed: Zombies and animals stunned more than once could stop being knocked down by melee hits.
+- Fixed: The heartbeat kept playing long after a fire went out or you stopped drowning. It now stops right away.
+- Fixed: Part of the Flash Thunder muzzle flash was switched off the moment it appeared.
+- Fixed: God mode did not end stun grenade effects.
+- Fixed: Loading screen tip titles.
+
+
 # XFX 3.2.0
 
 Add partial flashbang VFX and reduced shake for entities looking away
