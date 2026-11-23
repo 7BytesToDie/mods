@@ -1,3 +1,9 @@
+# XFX 4.0.1
+
+- Fixed: Stun grenades could never be crafted while crafting progression was on. The explosives crafting skill now unlocks them at level 16, the same level as contact grenades, and they appear in that skill's unlock list with their unlock level.
+- Fixed: Flash Thunder Grenade ammo and its box of 100 could never be crafted while crafting progression was on. The Shotgun Messiah book that unlocks slugs now unlocks both, and the box now lists that book as its unlock source.
+
+
 # XFX 4.0.0
 
 - New feature: XFX now requires Singularity 7.0.0 or later and posts a red chat warning on every load when it is missing or outdated.
